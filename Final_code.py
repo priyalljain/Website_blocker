@@ -96,9 +96,10 @@ def aftersubmit():
     else:
         
         # connecting to mysql database   
-        con = mysql.connector.connect(host="localhost", user="root", password="Rolis@619", database="register")
+        con = mysql.connector.connect(host="localhost", user="root", password="your_password", database="name_of_database")
         mycur = con.cursor()        
         # inserting into database
+        # signup is the table name in the database
         try:
             sql="insert into signup VALUES(%s, %s, %s, %s)"
             val=(n,e,p,cp)
@@ -126,7 +127,7 @@ signup= Button(root, text='Sign Up',width=20,bg='brown',fg='white',command=after
 
 
 def logintodb(user, passw):
-    db = mysql.connector.connect(host ="localhost",user="root", password="Rolis@619", database="register")
+    db = mysql.connector.connect(host ="localhost",user="root", password="your_password", database="name_of_database")
     cursor = db.cursor()
     
     # A Table in the database
